@@ -1,0 +1,17 @@
+<div class="container" *ngIf="!isLoading">
+    <div *ngIf="!username">
+        <h1>Hello World</h1>
+        <a routerLink="/login" class="btn">Login</a>
+    </div>
+    <div *ngIf="username" class="user-menu">
+        <h1>Welcome {{ username }}</h1>
+        <div class="dropdown">
+            <button class="user-icon">👤</button>
+            <div class="dropdown-content">
+                <a routerLink="/profile">Profile</a>
+                <a *ngIf="isAdmin" routerLink="/user-management">User management</a>
+                <a (click)="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>  

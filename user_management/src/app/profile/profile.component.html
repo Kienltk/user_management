@@ -1,0 +1,23 @@
+<div class="container" *ngIf="user">
+    <h2>{{ isOwnProfile ? 'Thông tin cá nhân' : 'Thông tin User' }}</h2>
+    <p><strong>Tên:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Số điện thoại:</strong> {{ user.phoneNumber || 'Chưa cập nhật' }}</p>
+    <p><strong>Địa chỉ:</strong> {{ user.address || 'Chưa cập nhật' }}</p>
+    <p><strong>Giới tính:</strong> {{ user.gender || 'Chưa cập nhật' }}</p>
+    <p><strong>Phòng ban:</strong> {{ user.department || 'Chưa cập nhật' }}</p>
+    <p><strong>Kỹ năng:</strong> {{ user.skills || 'Chưa cập nhật' }}</p>
+    <div class="actions">
+        <a *ngIf="isOwnProfile" [routerLink]="['/edit', user.id]" class="btn">Edit</a>
+        <button *ngIf="isOwnProfile && user.role !== 'Admin'" (click)="confirmDelete()" class="btn danger">Remove Tài
+            khoản</button>
+        <button *ngIf="isOwnProfile" (click)="logout()" class="btn">Logout</button>
+    </div>
+    <div class="confirm-dialog" *ngIf="showConfirmDelete">
+        <p>Bạn có chắc chắn muốn xóa tài khoản?</p>
+        <button (click)="deleteAccount()" class="btn danger">Xóa</button>
+        <button (click)="cancelDelete()" class="btn">Hủy</button>
+    </div>
+    <a *ngIf="!isOwnProfile" routerLink="/user-management">Quay lại</a>
+    <a *ngIf="isOwnProfile" routerLink="/home">Quay lại</a>
+</div>

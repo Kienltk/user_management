@@ -1,0 +1,75 @@
+<div class="container">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input formControlName="username" placeholder="Username">
+            <span class="error" *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+                {{ getErrorMessage('username') }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <input type="password" formControlName="password" placeholder="Password">
+            <span class="error" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+                {{ getErrorMessage('password') }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <input formControlName="email" placeholder="Email">
+            <span class="error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+                {{ getErrorMessage('email') }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <input formControlName="phoneNumber" placeholder="Phonenumber">
+            <span class="error" *ngIf="registerForm.get('phoneNumber')?.touched && registerForm.get('phoneNumber')?.invalid">
+                {{ getErrorMessage('phoneNumber') }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <input formControlName="address" placeholder="Address">
+            <span class="error" *ngIf="registerForm.get('address')?.touched && registerForm.get('address')?.invalid">
+                {{ getErrorMessage('address') }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+                <label><input type="radio" formControlName="gender" value="Female"> Female</label>
+            </div>
+            <span class="error" *ngIf="registerForm.get('gender')?.touched && registerForm.get('gender')?.invalid">
+                {{ getErrorMessage('gender') }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Department:</label>
+            <select formControlName="department">
+                <option value="" disabled>Select department</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Sales">Sales</option>
+            </select>
+            <span class="error" *ngIf="registerForm.get('department')?.touched && registerForm.get('department')?.invalid">
+                {{ getErrorMessage('department') }}
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Skills:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" (change)="updateSkills('Java', $event)"> Java</label>
+                <label><input type="checkbox" (change)="updateSkills('Angular', $event)"> Angular</label>
+                <label><input type="checkbox" (change)="updateSkills('Spring', $event)"> Spring</label>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="registerForm.invalid">Register</button>
+        <a routerLink="/login" class="login-link">Have account? Login</a>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Edit Information</h2>
+    <form (ngSubmit)="onSubmit()">
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Ussername" required>
+      <input *ngIf="id === currentUserId" type="password" [(ngModel)]="password" name="Password" placeholder="New Password (leave blank if not changed)">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+      <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="Phonenumber">
+      <input type="text" [(ngModel)]="address" name="address" placeholder="Address">
+      <div>
+        <label>Gender:</label>
+        <input type="radio" [(ngModel)]="gender" name="gender" value="Male"> Male
+        <input type="radio" [(ngModel)]="gender" name="gender" value="Female"> Female
+      </div>
+      <div>
+        <label>Department:</label>
+        <select [(ngModel)]="department" name="department">
+          <option value="IT">IT</option>
+          <option value="HR">HR</option>
+          <option value="Sales">Sales</option>
+        </select>
+      </div>
+      <div>
+        <label>Skills:</label>
+        <input type="checkbox" (change)="updateSkills($event, 'Java')" [checked]="skills.includes('Java')" name="skills"> Java
+        <input type="checkbox" (change)="updateSkills($event, 'Angular')" [checked]="skills.includes('Angular')" name="skills"> Angular
+        <input type="checkbox" (change)="updateSkills($event, 'Spring')" [checked]="skills.includes('Spring')" name="skills"> Spring
+      </div>
+      <button type="submit">Update</button>
+      <a *ngIf="isAdmin && id !== currentUserId" routerLink="/user-management">Back</a>
+      <a *ngIf="!isAdmin || id === currentUserId" routerLink="/profile">Back</a>
+    </form>
+  </div>  

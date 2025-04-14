@@ -1,0 +1,83 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 5px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn.danger {
+    background-color: #f44336;
+}
+
+.btn.danger:hover {
+    background-color: #e53935;
+}
+
+.confirm-dialog {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #f44336;
+    border-radius: 5px;
+    background-color: #ffe6e6;
+    color: #f44336;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

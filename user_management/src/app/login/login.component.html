@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Log in</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input formControlName="username" placeholder="Username">
+            <span class="error" *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+                {{ getErrorMessage('username') }}
+            </span>
+        </div>
+        <div class="form-group">
+            <input type="password" formControlName="password" placeholder="Password">
+            <span class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+                {{ getErrorMessage('password') }}
+            </span>
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <a routerLink="/register" class="register-link">Have not account? Register</a>
+    </form>
+</div>
