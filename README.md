@@ -15,5 +15,5 @@ Hướng dẫn chạy dự án
   + Kiểm tra node -v, npm -v đã có hay chưa, nếu chưa có hãy tại ở https://nodejs.org/fr
   + Mở terminal, chạy câu lệnh npm install -g @angular/cli, sau đó kiểm tra ng version
   + Chạy lệnh npm install để tải node_module
-  + Chỉnh sử kết nối API tại src\app\api.service.ts (nếu cần)
+  + Chỉnh sửa kết nối API tại src\app\api.service.ts (nếu cần)
 - Chạy song song 2 chương trình Spring Boot và Angular
