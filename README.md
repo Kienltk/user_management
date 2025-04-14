@@ -12,7 +12,7 @@ Hướng dẫn chạy dự án
 	username: admin
 	password: Admin@123
 - Folder user_management là Angular:
-  + Kiểm tra node -v, npm -v đã có hay chưa, nếu chưa có hãy tại ở https://nodejs.org/fr
+  + Kiểm tra node -v, npm -v đã có hay chưa, nếu chưa có hãy tải ở https://nodejs.org/fr
   + Mở terminal, chạy câu lệnh npm install -g @angular/cli, sau đó kiểm tra ng version
   + Chạy lệnh npm install để tải node_module
   + Chỉnh sửa kết nối API tại src\app\api.service.ts (nếu cần)
