@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Edit Information</h2>
     <form (ngSubmit)="onSubmit()">
-      <input type="text" [(ngModel)]="name" name="name" placeholder="Ussername" required>
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Username" required [readonly]="isAdmin">
       <input *ngIf="id === currentUserId" type="password" [(ngModel)]="password" name="Password" placeholder="New Password (leave blank if not changed)">
       <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
       <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="Phonenumber">

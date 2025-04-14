@@ -33,7 +33,7 @@ export class EditComponent implements OnInit {
   ngOnInit() {
     this.apiService.getCurrentUser().subscribe({
       next: (user) => {
-        this.isAdmin = user.role === 'Admin';
+        this.isAdmin = user.username === 'admin';
         this.currentUserId = user.id; 
       },
       error: (error) => {
