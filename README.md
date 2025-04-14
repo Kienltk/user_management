@@ -5,6 +5,7 @@ Mô tả dự án
 Hướng dẫn chạy dự án
 - Tạo database MySQL với câu lệnh trong file user_db.sql
 - Folder crud_user_api là Spring Boot:
+  + Load Maven project
   + Chỉnh sửa kết nối database trong file src/main/resources/application.properties(nếu cần)
   + Chỉnh sửa lại quyền truy cập api src/main/java/com.example.crud_user_api/security/SecurityConfig
 - Tài khoản Admin mặc định:
